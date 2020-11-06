@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "378996358535",
+    "firebase_url": "https://shoppingdemo-ea1d4.firebaseio.com",
+    "project_id": "shoppingdemo-ea1d4",
+    "storage_bucket": "shoppingdemo-ea1d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378996358535:android:597eebe57e6df43b02a722",
+        "android_client_info": {
+          "package_name": "com.example.flipkartClone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "378996358535-pti912ob1apl51elcf4t6ugo4g88vn25.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flipkartClone",
+            "certificate_hash": "cde3ddcd563b187bd79940b2bf4d413669efb72d"
+          }
+        },
+        {
+          "client_id": "378996358535-8jajdcg9lt4btldcoeo1n5r3j0ovh8ln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBp1k8MKQwJJNNnxWpwAK2WzgaZPCTUmdM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "378996358535-8jajdcg9lt4btldcoeo1n5r3j0ovh8ln.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
