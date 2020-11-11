@@ -4,6 +4,11 @@ class Product {
   String _url;
   double _price;
   String _imagePath;
+  String _desc;
+  
+ String get desc => _desc;
+
+ set desc(String value) => _desc = value;
 
   String get name => _name;
 

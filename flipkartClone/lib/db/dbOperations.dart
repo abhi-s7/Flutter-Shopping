@@ -5,6 +5,25 @@ import 'package:flipkartClone/models/product.dart';
 class DbOperations {
   _DbOperations() {} // this is required by firebase
 
+  static Future<String> addProduct(Product product) async{
+    CollectionReference collectionReference = FirebaseFirestore.instance.collection('products');
+    Map<String, dynamic> map = {
+
+      "name": product.name,
+      "decr": product.desc,
+      "price":product.price,
+      "image":product.imagePath,
+    };
+    //we get Document Reference
+    try{
+    DocumentReference docRef = await collectionReference.add(map);
+
+    }catch(e){
+      return "Error in Record Add $e";
+    }
+    return 'Record added ${docRef.id}';
+  }
+
   static Future<List<Menu>> fetchMenus() async {
     //:::::::Whenever async is used it should always return a Future
 

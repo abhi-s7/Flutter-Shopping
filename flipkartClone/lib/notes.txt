@@ -1,0 +1,16 @@
+:: I18N - Internationalization
+Flutter inbuild is very complex therefore they have made 3rd party application
+A lot of hardcoding is required
+
+therefore generate a file for English
+B/w I and N there are 18 characters there for I 18 N 
+
+/* iso code for country and language */
+French - fr
+USA - us 
+The languages are written by a translator not developer
+
+From pub.dev download easy_localization
+For IOS permission is required in plist file 
+
+:: Accessing a Camera
