@@ -10,18 +10,27 @@ class DbOperations {
     Map<String, dynamic> map = {
 
       "name": product.name,
-      "decr": product.desc,
+      "desc": product.desc,
       "price":product.price,
       "image":product.imagePath,
     };
     //we get Document Reference
+    DocumentReference docRef;
     try{
-    DocumentReference docRef = await collectionReference.add(map);
+    docRef = await collectionReference.add(map);
+    //::: add() method requires a map - Future<DocumentReference>
 
     }catch(e){
       return "Error in Record Add $e";
     }
     return 'Record added ${docRef.id}';
+  }
+
+  static Query fetchProducts() { //Future<List<Product>>
+    Query query = FirebaseFirestore.instance.collection('products');
+    String filterOrder = 'ascending';
+    return query;
+     
   }
 
   static Future<List<Menu>> fetchMenus() async {

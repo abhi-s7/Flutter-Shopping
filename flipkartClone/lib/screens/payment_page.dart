@@ -49,7 +49,9 @@ class _PaymentPageState extends State<PaymentPage> {
     //response of Success will give paymentId and orderId and signature
     String payId = response.paymentId;
     String orderId = response.orderId;
-    msg = 'Payment successs $payId $orderId';
+    setState(() {
+      msg = 'Payment successs $payId $orderId';
+    });
   }
 
   @override

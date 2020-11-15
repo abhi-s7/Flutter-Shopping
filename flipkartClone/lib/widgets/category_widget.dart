@@ -1,4 +1,5 @@
 import 'package:flipkartClone/models/product.dart';
+import 'package:flipkartClone/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class CategoryWidget extends StatelessWidget {
@@ -17,11 +18,19 @@ class CategoryWidget extends StatelessWidget {
         //it's a wrapper on Grid and List
         children: categories != null && categories.length > 0
             ? categories
-                .map((category) => Container(
+                .map(
+                  (category) => GestureDetector(
+                    // ::::: This will provide onTap feature as there is not such feature in Container or Image
+                    onTap: (){
+                      Navigator.of(context).pushNamed(Constant.LIST_OF_PRODUCT_ROUTE);
+                    },
+                    child: Container(
                       width: deviceSize.width / 4,
                       height: deviceSize.height / 8,
                       child: Image.network(category.imagePath),
-                    ))
+                    ),
+                  ),
+                )
                 .toList()
             : [
                 Container(

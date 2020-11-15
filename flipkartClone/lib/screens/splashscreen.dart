@@ -89,6 +89,7 @@ class _SplashScreenState extends State<SplashScreen>
             mainAxisAlignment: MainAxisAlignment.end,
             mainAxisSize: MainAxisSize
                 .min, //otherwise it would take whole the screen and we want to allocate the minimum space to it's children
+                //Therefore in proportionate it will align the 'Text' according to the image
             children: [
               Padding(
                 padding: EdgeInsets.only(bottom: 30),

@@ -19,7 +19,8 @@ class UploadProduct extends StatefulWidget {
 
 class _UploadProductState extends State<UploadProduct> {
   FirebaseStorage fbs;
-  //StorageUploadTask uploadTask;:::Depricated
+  //FireaseStorage(storageBucket: 'path of firebase storage')
+
 
   loadFS() {
     fbs = FirebaseStorage.instanceFor(
@@ -71,10 +72,17 @@ class _UploadProductState extends State<UploadProduct> {
 
   String imagePath;
   String downloadURL;
+    //StorageUploadTask uploadTask;:::Depricated
+
+
+  String msg = '';
+
   _uploadImage() {
     imagePath =
-        'images/${DateTime.now()}'; //this should be unique otherwise the Firebase storage will replace the file
+        'images/${DateTime.now()}.jpg'; //this should be unique otherwise the Firebase storage will replace the file
     //Therefore using timestamp
+
+    //Storage Reference
     Reference ref = fbs.ref().child(imagePath);
     //StorageUploadTask has been renamed to UploadTask
     UploadTask uploadTask = ref.putFile(imageFile);
@@ -97,11 +105,9 @@ class _UploadProductState extends State<UploadProduct> {
     }
   }
 
-  String msg = '';
-
   @override
   void initState() {
-    // TODO: implement initState
+     
     super.initState();
     loadFS();
   }

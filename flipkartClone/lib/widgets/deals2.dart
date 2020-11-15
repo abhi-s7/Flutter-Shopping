@@ -55,6 +55,8 @@ class DealsWidget extends StatelessWidget {
 
               children: [
                 Container(
+                  //or use container width to solve the alignment issue of Deals of the DAy
+                  //width: deviceSize.width,
                   padding: EdgeInsets.all(0),
                   child: Row(
                     children: [

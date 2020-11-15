@@ -14,3 +14,59 @@ From pub.dev download easy_localization
 For IOS permission is required in plist file 
 
 :: Accessing a Camera
+
+:: For creating customized building function or Rendering mechanism - Stateful builder
+Scaffold(
+    body: Builder()
+)
+
+This is recommended when everything is coming dynamically
+And ListView or GridView is not required
+
+:: Steps for Publishing app on playstore
+
+1. Create a launcher icon - appicon.co 
+    Android - <app dir>/android/app/src/main/res
+    Ios - Runner/Assets.xcassets
+
+    Paste the resources files generated from the website and replace them in the folder
+
+2. In AndroidManifest.xml update the application tag's android:icon attribute to reference icons from the previous step
+    < android:icon'=c@mipmap/ic_launcher'>
+
+3. Keytool needed to  Sign the app - JDK enabled machine is required  
+    This will generate a key.jks file which will be required as an argument to publish the app
+
+4. Add key information in build.gradle in app level
+    This way release builds of app will now be signed automatically
+
+    run 'flutter clean' after changing the gradle file. This prevents cached builds from affecting the signing process
+
+5. Shrink the code with R8 - it is enabled by default
+
+6. Review the app mainfest
+    android:label - final name of the app
+    add android.permission.INTERNET permission if internet connection needed
+
+7. Review the build configuration
+    applicationId, buildToolVersion etc
+
+8. Build an app bundle
+    Enter cd <app dir>
+    flutter build appbundle
+
+    flutter build apk - to generate apk file
+
+    specify some properties in key.properties
+    
+        storePassword=android
+        keyPassword=android
+        keyAlias=key
+        storeFile=<key.jks path>
+
+9. Register to google play store and upload app
+
+:: Testing 
+
+Functional - Apium or Sonar - tools 
+Unit testing - under .test folder 
